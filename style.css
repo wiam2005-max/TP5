@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fb;
+    color: #273043;
+    line-height: 1.7;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar.bg-dark {
+    background: linear-gradient(135deg, #172554, #312e81) !important;
+    padding: 18px 0;
+    box-shadow: 0 4px 15px rgba(23, 37, 84, 0.15);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand:hover {
+    color: #a5b4fc !important;
+}
+
+.navbar-nav {
+    gap: 10px;
+}
+
+.navbar .nav-link {
+    color: #e0e7ff !important;
+    font-weight: 500;
+    padding: 8px 14px !important;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff !important;
+}
+
+#accueil {
+    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+    padding: 110px 20px !important;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#accueil h1 {
+    color: #1e1b4b;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 25px;
+}
+
+#accueil p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #4b5563;
+    font-size: 1.15rem;
+}
+
+/* Bouton principal */
+
+#accueil .btn-primary {
+    background-color: #4f46e5;
+    border: 2px solid #4f46e5;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#accueil .btn-primary:hover {
+    background-color: #312e81;
+    border-color: #312e81;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+
+#apropos,
+#competences,
+#contact {
+    padding: 75px 20px !important;
+}
+
+#apropos,
+#contact {
+    background-color: #ffffff;
+}
+
+#competences {
+    background-color: #f5f7fb;
+}
+
+#apropos h2,
+#competences h2,
+#contact h2 {
+    color: #312e81;
+    font-size: 2rem;
+    font-weight: 750;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* Petit trait décoratif sous les titres */
+
+#apropos h2::after,
+#competences h2::after,
+#contact h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #6366f1;
+    border-radius: 5px;
+    margin-top: 12px;
+}
+
+#apropos p,
+#contact p {
+    color: #596579;
+    font-size: 1.05rem;
+    max-width: 850px;
+}
+
+
+#competences ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 750px;
+}
+
+#competences li {
+    background-color: #ffffff;
+    padding: 20px 24px;
+    border-radius: 12px;
+    border-left: 5px solid #6366f1;
+    box-shadow: 0 5px 18px rgba(31, 41, 55, 0.06);
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#competences li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(31, 41, 55, 0.12);
+}
+
+#contact p {
+    background-color: #f5f7ff;
+    border: 1px solid #e0e7ff;
+    padding: 18px 20px;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+}
+
+footer.bg-dark {
+    background: linear-gradient(135deg, #172554, #312e81) !important;
+    padding: 22px 15px !important;
+    font-size: 0.95rem;
+    color: #e0e7ff !important;
+}
+
+@media (max-width: 768px) {
+    .navbar.bg-dark {
+        padding: 12px 0;
+    }
+
+    .navbar-nav {
+        gap: 5px;
+        padding-top: 15px;
+    }
+
+    #accueil {
+        padding: 75px 18px !important;
+        min-height: 350px;
+    }
+
+    #accueil h1 {
+        font-size: 2rem;
+    }
+
+    #accueil p {
+        font-size: 1rem;
+    }
+
+    #apropos,
+    #competences,
+    #contact {
+        padding: 50px 18px !important;
+    }
+
+    #apropos h2,
+    #competences h2,
+    #contact h2 {
+        font-size: 1.7rem;
+    }
+
+    #competences ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Respecter la préférence de réduction des animations */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
