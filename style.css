@@ -184,7 +184,6 @@ footer.bg-dark {
     font-size: 0.95rem;
     color: #e0e7ff !important;
 }
-
 @media (max-width: 768px) {
     .navbar.bg-dark {
         padding: 12px 0;
